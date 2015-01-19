@@ -1,0 +1,70 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+
+    <!--
+     *
+     * JavaScript / Canvas teaching framwork 
+     * (C)opyright Hartmut Schirmacher, hschirmacher.beuth-hochschule.de 
+     *
+    -->
+
+    <title>CG2 A1: Lines, Curves &amp; Canvas</title>
+
+    <!-- import main module using RequireJS -->
+    <script data-main="main.js" src="../lib/require.js"></script>
+
+    <!-- import style sheet -->
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+
+</head>
+
+<body>
+
+<!-- this element will be used to diplay errors -->
+<pre id="error"></pre>
+
+<!-- centered region with drawing canvas and parameter area -->
+<div align="center">
+
+    <canvas id="drawing_area" width="1000" height="800" style="position:relative;">
+        <!-- NOTE: the "position:relative" is required due to the current  
+             implementation of mouse coordinate processing in module "util". -->
+        If you see this text, your browser probably does not
+        support the HTML5 canvas 2D drawing context.
+    </canvas>
+
+    <div id="param_area">
+
+        <h3>Create Object:</h3>
+        <button id="btnNewLine" type="button">New Line</button></br>
+        <button id="btnNewCircle" type="button">New Circle</button></br></br>
+        <button id="btnNewParametric" type="button">New Parametric Curve</button></br></br>
+        <button id="btnNewBezier" type="button">New Bezier Curve</button></br></br>
+
+        <h3>Selected Object:</h3>
+        <form>
+            <div style="display:none" id="radiusDiv">Radius: <input type="number" name="radius" id="radius"></br></br>
+            </div>
+            <div style="display:none" id="paraDiv">x(t): <input type="text" name="para" id="xt"></br></br>
+                y(t): <input type="text" name="para" id="yt"></br></br>
+                min t: <input type="number" name="para" id="mint"></br></br>
+                max t: <input type="number" name="para" id="maxt"></br></br>
+                segments: <input type="number" name="para" id="seg"></br></br>
+            </div>
+            <div style="display:none" id="tickDiv">
+                tick marks: <input type="checkbox" name="para" id="marks"></br></br>
+            </div>
+            Color: <input type="color" name="color" id="color"></br></br>
+            Line Width: <input type="number" name="width" id="width">
+        </form>
+
+    </div>
+
+    <div style="float:clear;">
+    </div>
+
+</div>
+
+</body>
+</html>
